@@ -11,10 +11,6 @@ def check_input(val_bool, text1, text2):
              print(f"{text2} Повторите ввод")
     return request
 
-list_numbers = check_input(1, "Введите последовательность чисел через пробел: ",
-                           "В последовательности должны быть только числа.")
-number = check_input(0, "Введите любое число: ", "Это не число.")
-
 def qsort(list_n, left, right):
     p = random.choice(list_n[left:right + 1])
     i, j = left, right
@@ -41,6 +37,10 @@ def binary_search(list_n, element, left, right):
         return binary_search(list_n, element, left, middle - 1)
     else:
         return binary_search(list_n, element, middle + 1, right)
+
+list_numbers = check_input(1, "Введите последовательность чисел через пробел: ",
+                           "В последовательности должны быть только числа.")
+number = check_input(0, "Введите любое число: ", "Это не число.")
 
 sort_list_numbers = qsort(list_numbers, 0, len(list_numbers)-1)
 print("____РЕШЕНИЕ ЗАДАЧИ____")
